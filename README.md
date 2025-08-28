@@ -55,11 +55,12 @@ output_img.save('output.png')
 
 ### サンプルスクリプトの実行
 ```bash
-# 仮想環境がアクティベートされていることを確認
-source .venv/bin/activate
+# uvを使って仮想環境内でスクリプトを実行（推奨）
+uv run python scripts/remove_bg.py
 
-# スクリプトを実行
-python remove_bg.py
+# または、仮想環境をアクティベートして実行
+source .venv/bin/activate
+python scripts/remove_bg.py
 ```
 
 ## ファイル構成

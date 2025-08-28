@@ -28,8 +28,8 @@ uv pip install -r requirements.txt
 
 ### Development
 ```bash
-# 背景除去スクリプト実行
-python scripts/remove_bg.py
+# 背景除去スクリプト実行（uvを使用）
+uv run python scripts/remove_bg.py
 
 # requirements.txt更新
 uv pip freeze > requirements.txt
