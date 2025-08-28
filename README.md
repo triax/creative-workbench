@@ -53,24 +53,42 @@ output_img = remove(input_img)
 output_img.save('output.png')
 ```
 
-### サンプルスクリプトの実行
-```bash
-# uvを使って仮想環境内でスクリプトを実行（推奨）
-uv run python scripts/remove_bg.py
+### スクリプトの実行
 
-# または、仮想環境をアクティベートして実行
-source .venv/bin/activate
-python scripts/remove_bg.py
+#### 単一ファイルの処理
+```bash
+# uvを使って実行（推奨）
+uv run python scripts/remove_background.py input/photo.jpg
+
+# 出力ファイル名を指定
+uv run python scripts/remove_background.py input/photo.jpg -o output/result.png
+```
+
+#### 複数ファイルの一括処理
+```bash
+# inputディレクトリの全JPGファイルを処理
+uv run python scripts/remove_background.py "input/*.jpg" --batch
+
+# 特定の出力ディレクトリに保存
+uv run python scripts/remove_background.py "input/*" --batch -d processed
+```
+
+#### ヘルプの表示
+```bash
+uv run python scripts/remove_background.py --help
 ```
 
 ## ファイル構成
 ```
 posters/
-├── .venv/              # 仮想環境ディレクトリ
-├── remove_bg.py        # 背景除去スクリプト
-├── requirements.txt    # 依存パッケージリスト
-├── CLAUDE.md          # 開発環境の詳細情報
-└── README.md          # このファイル
+├── .venv/                      # 仮想環境ディレクトリ
+├── input/                      # 処理対象の画像ファイル
+├── output/                     # 背景除去後の画像ファイル
+├── scripts/                    # Pythonスクリプト
+│   └── remove_background.py    # 汎用背景除去スクリプト
+├── requirements.txt            # 依存パッケージリスト
+├── CLAUDE.md                   # 開発環境の詳細情報
+└── README.md                   # このファイル
 ```
 
 ## トラブルシューティング

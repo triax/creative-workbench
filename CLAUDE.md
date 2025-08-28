@@ -29,7 +29,11 @@ uv pip install -r requirements.txt
 ### Development
 ```bash
 # 背景除去スクリプト実行（uvを使用）
-uv run python scripts/remove_bg.py
+# 単一ファイル
+uv run python scripts/remove_background.py input/photo.jpg
+
+# 複数ファイルバッチ処理
+uv run python scripts/remove_background.py "input/*.jpg" --batch
 
 # requirements.txt更新
 uv pip freeze > requirements.txt
@@ -42,11 +46,11 @@ uv pip install <package-name>
 
 ```
 posters/
-├── input/           # 処理対象の画像ファイル
-├── output/          # 背景除去後の画像ファイル
-├── scripts/         # Pythonスクリプト
-│   └── remove_bg.py # メイン背景除去スクリプト
-└── requirements.txt # 依存パッケージリスト
+├── input/                    # 処理対象の画像ファイル
+├── output/                   # 背景除去後の画像ファイル
+├── scripts/                  # Pythonスクリプト
+│   └── remove_background.py # 汎用背景除去スクリプト
+└── requirements.txt          # 依存パッケージリスト
 ```
 
 ## Code Architecture
@@ -57,9 +61,12 @@ posters/
 3. PNG形式（透明背景）で出力保存
 
 ### スクリプト構造
-- `scripts/remove_bg.py`: ハードコードされたパスで単一画像を処理
-- 入力: `input/`ディレクトリのJPEG画像
-- 出力: `output/`ディレクトリのPNG画像（透明背景）
+- `scripts/remove_background.py`: 汎用背景除去スクリプト
+  - コマンドライン引数で柔軟な入出力指定
+  - 単一ファイル/複数ファイルバッチ処理対応
+  - ワイルドカードパターンサポート
+- 入力: 任意の画像ファイルまたはディレクトリ
+- 出力: PNG形式の透明背景画像（デフォルト: `output/`ディレクトリ）
 
 ## Critical Dependencies
 
