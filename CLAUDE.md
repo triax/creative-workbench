@@ -4,11 +4,20 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-画像処理プロジェクト - 背景除去とQRコード生成機能を提供
+Creative Workbench - 様々な媒体向けクリエイティブコンテンツ生成ツールキット
+
+### 現在の機能
+#### 画像処理
 - `rembg`ライブラリを使用した画像背景の自動除去
 - カスタマイズ可能なQRコード生成（アイコン・カラー対応）
 - 画像の2値化処理（純粋な白黒変換）
 - 透過画像のシルエット化処理
+
+### 今後の拡張予定
+- テキスト生成・編集機能
+- ソーシャルメディア向けコンテンツ生成
+- 動画サムネイル作成
+- バナー・ポスターデザイン自動化
 
 ## Environment Requirements
 
@@ -66,7 +75,7 @@ uv pip install <package-name>
 ## Project Structure
 
 ```
-posters/
+creative-workbench/
 ├── input/                    # 処理対象の画像ファイル
 ├── output/                   # 処理後の画像ファイル（背景除去、QRコード）
 ├── scripts/                  # Pythonスクリプト
