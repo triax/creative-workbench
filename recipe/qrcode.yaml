@@ -1,0 +1,22 @@
+jobs:
+  -
+    title: TRIAXのロゴを使ったQRコード生成
+    input:
+      icon: input/logos/triax_logo_square_silhouette.png
+      url: https://www.triax.football
+      fill-color: "#000000"
+    output: output/20250907_leaflet/qr_triax_leaflet.png
+  -
+    title: SportsBankのロゴを使ったファンクラブ誘導のQRコード生成
+    input:
+      icon: input/logos/sportsbank_logo_square_silhouette.png
+      url: https://sports.banklives.com/pfc/clubtriax
+      fill-color: "#000000"
+    output: output/20250907_leaflet/qr_sportsbank_fanclub_leaflet.png
+  -
+    title: Spportunityのロゴを使ったQRコード生成
+    input:
+      icon: input/logos/spportunity_logo_square_silhouette.png
+      url: https://www.spportunity.com/tokyo/team/1063/invest/751/detail
+      fill-color: "#000000"
+    output: output/20250907_leaflet/qr_spportunity_leaflet.png
